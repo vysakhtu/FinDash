@@ -210,3 +210,36 @@ Deploying a React (Vite) application on **Vercel**:
    }
    ```
 4. **Click Deploy**. Vercel will build and provide a secure production-ready live URL.
+
+---
+
+## Continuous Integration (GitHub Actions)
+
+![CI](https://github.com/vysakhtu/FinDash/actions/workflows/ci.yml/badge.svg)
+
+This repository includes a GitHub Actions workflow (`.github/workflows/ci.yml`) that runs on `push` and `pull_request` to the `main` branch. It performs two jobs in parallel:
+
+- **Backend — Run Django tests**: sets up Python, installs minimal dependencies (`Django`, `djangorestframework`, `django-cors-headers`), runs migrations and `python manage.py test` in the `backend` folder.
+- **Frontend — Build**: sets up Node.js, installs dependencies with `npm ci`, and runs `npm run build` in the `frontend` folder to confirm the frontend compiles.
+
+Run the same checks locally:
+
+Backend tests:
+```bash
+cd backend
+python -m venv .venv
+.venv\Scripts\activate   # Windows
+# or: source .venv/bin/activate   # macOS/Linux
+pip install Django djangorestframework django-cors-headers
+python manage.py migrate
+python manage.py test
+```
+
+Frontend build:
+```bash
+cd frontend
+npm ci
+npm run build
+```
+
+If you want additional CI steps (linting, security checks, automatic deployments), tell me which checks to add and I will extend the workflow.
