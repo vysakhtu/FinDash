@@ -2,7 +2,7 @@ import os
 import django
 from datetime import datetime, timedelta
 
-# Set up Django environment
+# Setup
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fintech_backend.settings')
 django.setup()
 
