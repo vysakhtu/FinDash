@@ -1,4 +1,4 @@
-# Antigravity Pay - Full Stack Mini Fintech Dashboard
+# FinDash - Full Stack Mini Fintech Dashboard
 
 A complete, responsive Full Stack Mini Fintech Dashboard built using **React (Vite)** on the frontend, **Django REST Framework** on the backend, and **SQLite** as the database. It features modern **dark-glassmorphism styling**, animated summaries, interactive charts, and a rule-based financial spending insight engine.
 
